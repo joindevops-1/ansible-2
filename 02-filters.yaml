@@ -18,3 +18,17 @@
   - name: convert dictionary to items
     ansible.builtin.debug:
       msg: "Hello, {{ my_dict | dict2items }}"
+
+- name: items to dictionary
+  hosts: localhost
+  vars:
+    my_items:
+    - {'key': 'Course', 'value': 'Ansible'}
+    - {'key': 'Trainer', 'value': 'Sivakumar'}
+  tasks:
+  - name: before converting
+    ansible.builtin.debug:
+      msg: "Before convert: {{my_items}}"
+  - name: convert dictionary to items
+    ansible.builtin.debug:
+      msg: "Hello, {{ my_items | items2dict }}"

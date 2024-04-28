@@ -32,3 +32,10 @@
   - name: convert dictionary to items
     ansible.builtin.debug:
       msg: "Hello, {{ my_items | items2dict }}"
+
+- name: upper case
+  hosts: localhost
+  tasks:
+  - name: upper case
+    ansible.builtin.debug:
+      msg: "Hello DevOps with AWS | upper"

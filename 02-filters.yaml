@@ -12,6 +12,9 @@
       Course: Ansible
       Trainer: Sivakumar
   tasks:
+  - name: before converting
+    ansible.builtin.debug:
+      msg: "Before convert: {{my_dict}}"
   - name: convert dictionary to items
     ansible.builtin.debug:
       msg: "Hello, {{ my_dict | dict2items }}"

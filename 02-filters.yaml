@@ -8,7 +8,9 @@
 - name: dict2items
   hosts: localhost
   vars:
-    my_dict: {Course: Ansible, Trainer: Sivakumar}
+    my_dict:
+      Course: Ansible
+      Trainer: Sivakumar
   tasks:
   - name: convert dictionary to items
     ansible.builtin.debug:

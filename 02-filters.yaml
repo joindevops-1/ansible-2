@@ -4,3 +4,12 @@
   - name: print default value
     ansible.builtin.debug:
       msg: "Hello {{Course | default('Ansible')}}"
+
+- name: dict2items
+  hosts: localhost
+  vars:
+    my_dict: {key1: value1, key2: value2}
+  tasks:
+  - name: convert dictionary to items
+    ansible.builtin.debug:
+      msg: "Hello, {{ my_dict | dict2items }}"

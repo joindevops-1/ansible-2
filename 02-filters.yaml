@@ -35,7 +35,9 @@
 
 - name: upper case
   hosts: localhost
+  vars:
+    greeting: "Hello DevOps with AWS"
   tasks:
   - name: upper case
     ansible.builtin.debug:
-      msg: "Hello DevOps with AWS | upper"
+      msg: "{{ greeting | upper}}"

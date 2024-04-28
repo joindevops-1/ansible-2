@@ -12,5 +12,5 @@
 
   - name: number greater than or equal to 10
     ansible.builtin.debug:
-      msg: "Given number is less than 10"
+      msg: "Given number greater than or equal to 10"
     when: number | int >= 10

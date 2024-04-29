@@ -59,3 +59,9 @@
       login_user: root
       login_password: ExpenseApp@1
       login_host: db.daws78s.online
+
+  - name: Start backend service
+    ansible.builtin.service:
+      name: backend
+      state: started
+      enabled: yes

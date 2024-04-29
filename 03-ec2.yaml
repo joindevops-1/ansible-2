@@ -13,12 +13,11 @@
       - name: frontend
   tasks:
   - name: Create EC2 instances
-    ec2_instance:
+    amazon.aws.ec2_instance:
       region: "{{ aws_region }}"
       name: "{{ item.name }}"
       instance_type: "{{ instance_type }}"
       image_id: "{{ image_id }}"
-      vpc_security_group_ids:
-        - "{{ security_group }}"
+      security_group: "{{ security_group }}"
     loop: "{{ instances }}"
     register: ec2_info

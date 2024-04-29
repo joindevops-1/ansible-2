@@ -21,3 +21,14 @@
       security_group: "{{ security_group }}"
     loop: "{{ instances }}"
     register: ec2_info
+
+  - name: Update Route 53 record
+    route53:
+      state: present
+      overwrite: true
+      zone: "{{ domain }}"
+      record: "{{ item.tags.Name }}.{{ domain }}"
+      type: A
+      ttl: 3600
+      value: "{{ item.public_ip_address if item.tags.Name == 'frontend' else item.private_ip_address }}"
+    loop: "{{ ec2_info.instances }}"

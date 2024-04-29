@@ -13,7 +13,9 @@
       enabled: yes
   - name: Install Python MySQL Client
     ansible.builtin.pip:
-      name: PyMySQL
+      name: 
+      - PyMySQL
+      - cryptography
       executable: pip3.9
   - name: check DB connection
     community.mysql.mysql_info:

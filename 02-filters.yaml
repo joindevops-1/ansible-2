@@ -41,3 +41,21 @@
   - name: upper case
     ansible.builtin.debug:
       msg: "{{ greeting | upper}}"
+
+- name: unique numbers
+  hosts: localhost
+  vars:
+    numbers: [1, 2, 2, 3]
+  tasks:
+  - name: print unique numbers
+    ansible.builtin.debug:
+      msg: "unique numbers: {{ numbers | unique }}"
+
+- name: min and max
+  hosts: localhost
+  vars:
+    ages: [25, 30, 45]
+  tasks:
+  - name: min and max
+    ansible.builtin.debug:
+      msg: "min age: {{ ages | min }}, max age: {{ ages | max }}" 

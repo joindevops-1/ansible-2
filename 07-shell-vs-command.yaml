@@ -1,5 +1,5 @@
 - name: shell vs command
-  hosts: web
+  hosts: frontend
   tasks:
   - name: command module
     ansible.builtin.command: "echo 'Hello' > /tmp/hello.txt"
